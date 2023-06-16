@@ -8,19 +8,26 @@ public class WarmUpTests {
 
     @Test
     void testSleepIns () {
-        assertEquals(true, Warmup1.sleepIn(false, false));
-        assertEquals(false, Warmup1.sleepIn(true, false));
-        assertEquals(true, Warmup1.sleepIn(false, true));
-        assertEquals(true, Warmup1.sleepIn(true, true));
+        assertEquals(true, Warmups.sleepIn(false, false));
+        assertEquals(false, Warmups.sleepIn(true, false));
+        assertEquals(true, Warmups.sleepIn(false, true));
+        assertEquals(true, Warmups.sleepIn(true, true));
     }
 
     @Test
     void testStartOz () {
-        assertEquals("oz", Warmup1.startOz("ozymandias"));
-        assertEquals("z", Warmup1.startOz("bzoo"));
-        assertEquals("o", Warmup1.startOz("oxx"));
-        assertEquals("", Warmup1.startOz(""));
-        assertEquals("oz", Warmup1.startOz("oz"));
+        assertEquals("oz", Warmups.startOz("ozymandias"));
+        assertEquals("z", Warmups.startOz("bzoo"));
+        assertEquals("o", Warmups.startOz("oxx"));
+        assertEquals("", Warmups.startOz(""));
+        assertEquals("oz", Warmups.startOz("oz"));
+    }
+
+    @Test
+    void testStringMatch () {
+       assertEquals(3,  Warmups.stringMatch("xxcaazz", "xxbaaz"));
+       assertEquals(2,Warmups.stringMatch("abc", "abc"));
+       assertEquals(0,Warmups.stringMatch("abc", "axc"));
     }
 
 

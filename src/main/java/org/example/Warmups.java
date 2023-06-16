@@ -1,6 +1,6 @@
 package org.example;
-import java.util.Scanner;
-public class Warmup1 {
+
+public class Warmups {
 
     public static void main(String[] args) {
     }
@@ -47,8 +47,29 @@ startOz("oxx") → "o"
         return returnValue;
 
     }
+/*
+    Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring.
+    So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings.
+            stringMatch("xxcaazz", "xxbaaz") → 3
+    stringMatch("abc", "abc") → 2
+    stringMatch("abc", "axc") → 0
+*/
 
-
+    public static int stringMatch(String a, String b){
+        int count = 0;
+        int shortestLength = Math.min(a.length(), b.length());
+        //go through the length of the shortest string
+        for (int i = 0; i < shortestLength-1; i++){
+            //compare index with string a and b, if they match, check to see if next one matches as well
+            //if they do, add 1 to count
+            if (a.charAt(i) == b.charAt(i)){
+                if (a.charAt(i+1) == b.charAt(i+1)){
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
 
 }
 
