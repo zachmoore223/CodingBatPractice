@@ -6,13 +6,13 @@ public class Warmups {
     }
 
     /*
-The parameter weekday is true if it is a weekday, and the parameter vacation is true if we are on vacation.
-We sleep in if it is not a weekday or we're on vacation. Return true if we sleep in.
+    The parameter weekday is true if it is a weekday, and the parameter vacation is true if we are on vacation.
+    We sleep in if it is not a weekday or we're on vacation. Return true if we sleep in.
 
-sleepIn(false, false) → true
-sleepIn(true, false) → false
-sleepIn(false, true) → true
-*/
+    sleepIn(false, false) → true
+    sleepIn(true, false) → false
+    sleepIn(false, true) → true
+    */
 
 
     public static boolean sleepIn(boolean weekday, boolean vacation) {
@@ -25,12 +25,12 @@ sleepIn(false, true) → true
     }
 
     /*
-Given a string, return a string made of the first 2 chars (if present), however include first char only if it is 'o'
-and include the second only if it is 'z', so "ozymandias" yields "oz".
+    Given a string, return a string made of the first 2 chars (if present), however include first char only if it is 'o'
+    and include the second only if it is 'z', so "ozymandias" yields "oz".
 
-startOz("ozymandias") → "oz"
-startOz("bzoo") → "z"
-startOz("oxx") → "o"
+    startOz("ozymandias") → "oz"
+    startOz("bzoo") → "z"
+    startOz("oxx") → "o"
      */
 
     public static String startOz(String str) {
@@ -47,13 +47,13 @@ startOz("oxx") → "o"
         return returnValue;
 
     }
-/*
+    /*
     Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring.
     So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings.
             stringMatch("xxcaazz", "xxbaaz") → 3
     stringMatch("abc", "abc") → 2
     stringMatch("abc", "axc") → 0
-*/
+    */
 
     public static int stringMatch(String a, String b){
         int count = 0;
@@ -69,6 +69,28 @@ startOz("oxx") → "o"
             }
         }
         return count;
+    }
+
+    /*
+    Given a string, return a version where all the "x" have been removed. Except an "x" at the very start or end should not be removed.
+    stringX("xxHxix") → "xHix"
+    stringX("abxxxcd") → "abcd"
+    stringX("xabxxxcdx") → "xabcdx"
+     */
+
+    public static String stringX(String a){
+        String newString = "";
+        for (int i = 0; i < a.length(); i++){
+            if(a.charAt(i) != 'x'){
+                newString = newString + a.substring(i, i+1);
+            }
+            if(a.charAt(i) == 'x') {
+                if(i == a.length()-1 || i == 0){
+                    newString = newString + a.substring(i, i+1);
+                }
+            }
+        }
+        return newString;
     }
 
 }

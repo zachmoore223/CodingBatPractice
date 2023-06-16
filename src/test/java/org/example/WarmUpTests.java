@@ -30,6 +30,12 @@ public class WarmUpTests {
        assertEquals(0,Warmups.stringMatch("abc", "axc"));
     }
 
+    @Test
+    void testStringX () {
+        assertEquals("xHix",  Warmups.stringX("xxHxix"));
+        assertEquals("abcd",Warmups.stringX("abxxxcd"));
+        assertEquals("xabcdx",Warmups.stringX("xabxxxcdx"));
+    }
 
 
 }
