@@ -192,16 +192,6 @@ public class Warmups {
     noTeenSum(2, 1, 14) → 3
      */
 
-
-    //FUNCTIONAL - LISTS
-    /*
-    Given a list of integers, return a list where each integer is multiplied with itself.
-
-    square([1, 2, 3]) → [1, 4, 9]
-    square([6, 8, -6, -8, 1]) → [36, 64, 36, 64, 1]
-    square([]) → []
-     */
-
     public int noTeenSum(int a, int b, int c) {
         int sum = 0;
 
@@ -214,6 +204,41 @@ public class Warmups {
         return sum;
 
     }
+
+    /*
+    We want make a package of goal kilos of chocolate. We have small bars (1 kilo each) and big bars (5 kilos each).
+    Return the number of small bars to use, assuming we always use big bars before small bars. Return -1 if it can't be done.
+
+
+    makeChocolate(4, 1, 9) → 4
+    makeChocolate(4, 1, 10) → -1
+    makeChocolate(4, 1, 7) → 2
+     */
+
+    public int makeChocolate(int small, int big, int goal) {
+        int smallBarCount = 0;
+        int numberOfBigs = Math.abs(goal / 5);
+        if (numberOfBigs > big){
+            numberOfBigs = big;
+        }
+        smallBarCount = goal - (numberOfBigs * 5);
+
+        if (smallBarCount <= small){
+            return smallBarCount;
+        }
+
+        return -1;
+    }
+
+
+    //FUNCTIONAL - LISTS
+    /*
+    Given a list of integers, return a list where each integer is multiplied with itself.
+
+    square([1, 2, 3]) → [1, 4, 9]
+    square([6, 8, -6, -8, 1]) → [36, 64, 36, 64, 1]
+    square([]) → []
+     */
 
     public int fixTeen (int n){
         if (n == 15 || n == 16){
