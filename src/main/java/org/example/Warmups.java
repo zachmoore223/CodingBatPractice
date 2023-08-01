@@ -9,6 +9,18 @@ public class Warmups {
     }
 
     /*
+    Return true if the given non-negative number is 1 or 2 less than a multiple of 20. So for example 38 and 39 return true, but 40 returns false. See also: Introduction to Mod
+
+
+    less20(18) → true
+    less20(19) → true
+    less20(20) → false
+````*/
+    public boolean less20(int n) {
+        return (n + 1) % 20 == 0 || (n + 2) % 20 == 0;
+    }
+
+    /*
     The parameter weekday is true if it is a weekday, and the parameter vacation is true if we are on vacation.
     We sleep in if it is not a weekday or we're on vacation. Return true if we sleep in.
 
