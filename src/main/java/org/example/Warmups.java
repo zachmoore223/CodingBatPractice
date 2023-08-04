@@ -84,6 +84,22 @@ public class Warmups {
     }
 
     /*
+    Given an array of strings, return a Map<String, Integer> containing a key for every different string in the array,
+    and the value is that string's length.
+
+    wordLen(["a", "bb", "a", "bb"]) → {"bb": 2, "a": 1}
+    wordLen(["this", "and", "that", "and"]) → {"that": 4, "and": 3, "this": 4}
+    wordLen(["code", "code", "code", "bug"]) → {"code": 4, "bug": 3}
+     */
+    public Map<String, Integer> wordLen(String[] strings) {
+        Map<String, Integer> mapLen = new HashMap();
+        for (String s : strings) {
+            mapLen.put(s, s.length());
+        }
+        return mapLen;
+    }
+    
+    /*
     Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring.
     So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings.
             stringMatch("xxcaazz", "xxbaaz") → 3
