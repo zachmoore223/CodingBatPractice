@@ -1,6 +1,8 @@
 package org.example;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Warmups {
@@ -62,6 +64,25 @@ public class Warmups {
         return returnValue;
 
     }
+
+    /*
+    Given an array of strings, return a Map<String, Integer> containing a key for every different string in the array, always
+    \with the value 0. For example the string "hello" makes the pair "hello":0. We'll do more complicated counting later, but
+    for this problem the value is simply 0.
+
+    word0(["a", "b", "a", "b"]) → {"a": 0, "b": 0}
+    word0(["a", "b", "a", "c", "b"]) → {"a": 0, "b": 0, "c": 0}
+    word0(["c", "b", "a"]) → {"a": 0, "b": 0, "c": 0}
+     */
+
+    public Map<String, Integer> word0(String[] strings) {
+        Map<String, Integer> map0 = new HashMap();
+        for (String s : strings) {
+            map0.put(s, 0);
+        }
+        return map0;
+    }
+
     /*
     Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring.
     So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings.
